@@ -1,0 +1,235 @@
+/* ---------- COLORS: change these to restyle the whole site ---------- */
+:root {
+  --bg: #2a0657;
+  --bg-light: #3b0a78;
+  --card: #40107f;
+  --text: #ffffff;
+  --muted: #cdb8f0;
+  --border: #6a3fb0;
+  --orange: #ffa62b;
+}
+
+/* ---------- Basics ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* FONT: change Poppins here to use a different font */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Poppins, Arial, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 64px 0;
+}
+
+section.alt {
+  background: var(--bg-light);
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0 0 28px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 13px 30px;
+  background: var(--orange);
+  color: var(--bg);
+  border: 2px solid var(--orange);
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--orange);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+  margin-left: 10px;
+}
+
+/* ---------- Top section (hero) ---------- */
+.hero {
+  background: linear-gradient(135deg, #4a0b95, #2a0657);
+}
+
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 0;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+nav a {
+  margin-left: 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--orange);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+  align-items: center;
+  padding: 50px 0 90px;
+}
+
+.role {
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 7vw, 4.6rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.sub {
+  color: var(--muted);
+  max-width: 32em;
+  margin: 22px 0 30px;
+}
+
+.avatar {
+  justify-self: center;
+  width: 280px;
+  height: 280px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  background: var(--bg-light);
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+/* ---------- Project card ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 1.4rem;
+}
+
+.card p,
+.card ul {
+  color: var(--muted);
+}
+
+.tags span {
+  display: inline-block;
+  margin: 8px 8px 0 0;
+  padding: 3px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* ---------- Skills ---------- */
+.cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.cols h3 {
+  color: var(--orange);
+  margin: 0 0 10px;
+}
+
+.cols ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: var(--muted);
+}
+
+.cols li {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ---------- Education and footer ---------- */
+.entry {
+  margin-bottom: 20px;
+}
+
+.entry b {
+  display: block;
+}
+
+.entry span,
+.note {
+  color: var(--muted);
+}
+
+footer {
+  padding: 30px 0 44px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 760px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding-bottom: 60px;
+  }
+
+  .avatar {
+    order: -1;
+    width: 180px;
+    height: 180px;
+    font-size: 3.4rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .btn.ghost {
+    margin: 12px 0 0;
+  }
+}
