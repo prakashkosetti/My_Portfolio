@@ -1,12 +1,13 @@
 /* ---------- COLORS: change these to restyle the whole site ---------- */
 :root {
-  --bg: #2a0657;
-  --bg-light: #3b0a78;
-  --card: #40107f;
-  --text: #ffffff;
-  --muted: #cdb8f0;
-  --border: #6a3fb0;
-  --orange: #ffa62b;
+  --bg: #ffffff;
+  --bg-light: #f3f6fc;
+  --card: #ffffff;
+  --text: #1a1f36;
+  --muted: #5b6478;
+  --border: #e1e6f0;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
 }
 
 /* ---------- Basics ---------- */
@@ -50,33 +51,50 @@ h2 {
   margin: 0 0 28px;
 }
 
+h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 8px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
   padding: 13px 30px;
-  background: var(--orange);
-  color: var(--bg);
-  border: 2px solid var(--orange);
-  border-radius: 4px;
+  background: var(--accent);
+  color: #ffffff;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
+  transition: background 0.2s, color 0.2s;
 }
 
 .btn:hover {
-  background: transparent;
-  color: var(--orange);
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #ffffff;
 }
 
 .btn.ghost {
   background: transparent;
-  color: var(--text);
-  border-color: var(--border);
+  color: var(--accent);
+  border-color: var(--accent);
   margin-left: 10px;
+}
+
+.btn.ghost:hover {
+  background: var(--accent);
+  color: #ffffff;
 }
 
 /* ---------- Top section (hero) ---------- */
 .hero {
-  background: linear-gradient(135deg, #4a0b95, #2a0657);
+  background: linear-gradient(135deg, #eaf1ff, #ffffff);
 }
 
 .bar {
@@ -88,18 +106,20 @@ h2 {
 
 .logo {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 nav a {
   margin-left: 24px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
+  color: var(--text);
 }
 
 nav a:hover {
-  color: var(--orange);
+  color: var(--accent);
 }
 
 .hero-grid {
@@ -111,13 +131,14 @@ nav a:hover {
 }
 
 .role {
-  color: var(--muted);
+  color: var(--accent);
+  font-weight: 600;
   margin: 0 0 10px;
 }
 
 h1 {
-  font-size: clamp(2.4rem, 7vw, 4.6rem);
-  line-height: 1.1;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.15;
   margin: 0;
 }
 
@@ -129,24 +150,37 @@ h1 {
 
 .avatar {
   justify-self: center;
-  width: 280px;
-  height: 280px;
+  width: 260px;
+  height: 260px;
   display: grid;
   place-items: center;
-  border: 2px solid var(--border);
   border-radius: 50%;
-  background: var(--bg-light);
-  font-size: 5rem;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #ffffff;
+  font-size: 4.5rem;
   font-weight: 700;
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.3);
 }
 
 /* ---------- Project card ---------- */
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 30px;
-  margin-bottom:20px:
+  margin-bottom: 28px;
+  box-shadow: 0 4px 16px rgba(26, 31, 54, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.15);
+}
+
+.card:last-child {
+  margin-bottom: 0;
 }
 
 .card h3 {
@@ -163,9 +197,12 @@ h1 {
   display: inline-block;
   margin: 8px 8px 0 0;
   padding: 3px 14px;
+  background: var(--bg-light);
   border: 1px solid var(--border);
   border-radius: 999px;
+  color: var(--accent);
   font-size: 0.85rem;
+  font-weight: 600;
 }
 
 /* ---------- Skills ---------- */
@@ -176,7 +213,7 @@ h1 {
 }
 
 .cols h3 {
-  color: var(--orange);
+  color: var(--accent);
   margin: 0 0 10px;
 }
 
@@ -221,9 +258,9 @@ footer {
 
   .avatar {
     order: -1;
-    width: 180px;
-    height: 180px;
-    font-size: 3.4rem;
+    width: 170px;
+    height: 170px;
+    font-size: 3.2rem;
   }
 
   .logo {
